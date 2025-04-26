@@ -1,12 +1,23 @@
 import Empty from './Empty'
-function RightList() {
+function RightList({ participants, excludeParticipant }) {
     return (
         <div className="col-12 col-md-6">
-            <ul className="list-group list-group-flush" va-array="selected">
-                <li className="list-group-item">Can</li>
-                <li className="list-group-item">Mücahit</li>
-            </ul>
-          </div>
+            {
+                participants.length == 0 ? <Empty /> :
+                    <ul className="list-group list-group-flush">
+                        {
+                            participants.map(p => (
+                                <li key={p.id} className="list-group-item d-flex justify-content-between">
+                                    <button className='btn btn-sm btn-primary' onClick={() => excludeParticipant(p.id)} >
+                                        <span className='bi bi-chevron-left'></span>
+                                    </button>
+                                    <span>{p.firstName} {p.lastName}</span>
+                                </li>
+                            ))
+                        }
+                    </ul>
+            }
+        </div>
     );
 }
 

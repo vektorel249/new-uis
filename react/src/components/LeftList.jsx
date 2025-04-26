@@ -5,18 +5,20 @@ array map fonsksiyonu bir dizi içindeki öğeleri başka bir forma dönüştür
 
 C# => yield return
 */
-function LeftList({ participants }) {
+function LeftList({ participants, selectParticipant }) {
     return (
         <div className="col-12 col-md-6">
-            <ul className="list-group list-group-flush" va-array="participants">
-                {participants.map(p => (
-                    <li key={p.id} className="list-group-item d-flex justify-content-between">
-                        <span>{p.firstName} {p.lastName}</span>
-                        <button className='btn btn-sm btn-primary'>
-                            <span className='bi bi-chevron-right'></span>
-                        </button>
-                    </li>))}
-            </ul>
+            {participants.length == 0 ? <Empty /> :
+                <ul className="list-group list-group-flush">
+                    {participants.map(p => (
+                        <li key={p.id} className="list-group-item d-flex justify-content-between">
+                            <span>{p.firstName} {p.lastName}</span>
+                            <button className='btn btn-sm btn-primary' onClick={() => selectParticipant(p.id)}>
+                                <span className='bi bi-chevron-right'></span>
+                            </button>
+                        </li>))}
+                </ul>
+            }
         </div>);
 }
 
