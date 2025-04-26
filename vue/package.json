@@ -1,0 +1,20 @@
+{
+  "name": "participants",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.5.13",
+    "bootstrap": "^5.3.5",
+    "bootstrap-icons": "^1.11.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.2",
+    "vite": "^6.3.1"
+  }
+}

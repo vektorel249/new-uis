@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Startup</title>
+    <script src="js/vue.global.js"></script>
+</head>
+<body>
+    <div id="root">
+        <input v-model="value" />
+        <button @click="increase">Artır</button>
+        <p>Değer: {{value}}</p>
+        <p v-if="value != 0">İki Katı : <span>{{double}}</span> </p>
+        <button @click="decrease">Azalt</button>
+        <hr>
+        <ul>
+            <li v-for="p in people">{{p.name}} - 
+                <b v-if="isOld(p.age)">{{p.age}}</b>
+                <span v-else>{{p.age}}</span>
+            </li>
+        </ul>
+    </div>
+    <script src="js/site.js"></script>
+</body>
+</html>
